@@ -12,18 +12,20 @@ get_header();
 
 <main id="primary" class="site-main container">
 
-	<?php if ( have_posts() ) : ?>
+	<div class="col-md-8 col-lg-9 my-5 page-content">
 
-	<header class="page-header">
-		<h1 class="page-title">
-			<?php
+		<?php if ( have_posts() ) : ?>
+
+		<header class="page-header">
+			<h1 class="page-title">
+				<?php
 					/* translators: %s: search query. */
 					printf( esc_html__( 'Search Results for: %s', 'georgia-workers-comp' ), '<span>' . get_search_query() . '</span>' );
 					?>
-		</h1>
-	</header><!-- .page-header -->
+			</h1>
+		</header><!-- .page-header -->
 
-	<?php
+		<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -46,6 +48,7 @@ get_header();
 		endif;
 		?>
 
+	</div>
 </main><!-- #main -->
 
 <?php
