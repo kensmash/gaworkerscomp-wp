@@ -18,4 +18,20 @@
         <?php the_content(); ?>
     </div><!-- .entry-content -->
 
+    <?php  
+        $query = new WP_Query(array(
+        'post_type' => 'articles',
+        'posts_per_page' => 5,
+        'orderby' => 'meta_value',
+    ));
+    ?>
+
+    <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); 
+
+    get_template_part( 'template-parts/content', 'excerpt' ); 
+
+    endwhile; endif; 
+    
+    wp_reset_postdata(); ?>
+
 </article>

@@ -13,7 +13,7 @@
 
 <footer id="colophon" class="site-footer ">
 	<div class="container site-info">
-		<p>All original graphics and content on GA WorkersComp are copyright © 1998 - 2020 by William Anderson. All rights reserved. Specific features are the copyrighted material of their respective named authors. No reproduction of any material on this site is permitted without the express written permission of the copyright holders.</p>
+		<p>All original graphics and content on GA WorkersComp are copyright © 1998 - <?php echo date("Y");?> by William Anderson. All rights reserved. Specific features are the copyrighted material of their respective named authors. No reproduction of any material on this site is permitted without the express written permission of the copyright holders.</p>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
