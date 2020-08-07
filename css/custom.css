@@ -10029,6 +10029,11 @@ li:focus-within a {
   border-top: 8px solid #835e4a;
 }
 
+.article-listing h2,
+.article-listing h3 {
+  font-weight: 400;
+}
+
 .page-content h2 {
   font-size: 1.5em;
 }
