@@ -38,15 +38,18 @@
 
 	?>
 	<?php if( $articles ): ?>
-	<ul>
-		<?php foreach( $articles as $article ): ?>
+	<div class="author-articles-list">
+		<h2 class="mb-3">Articles</h2>
+		<ul>
+			<?php foreach( $articles as $article ): ?>
 
-		<li>
-			<a href="<?php echo get_permalink( $article->ID ); ?>"><?php echo get_the_title( $article->ID ); ?></a>
-		</li>
+			<li>
+				<a href="<?php echo get_permalink( $article->ID ); ?>"><?php echo get_the_title( $article->ID ); ?></a>
+			</li>
 
-		<?php endforeach; ?>
-	</ul>
+			<?php endforeach; ?>
+		</ul>
+	</div>
 	<?php endif; ?>
 
 </article>
