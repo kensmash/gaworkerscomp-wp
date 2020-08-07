@@ -10,6 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class("p-3"); ?>>
+
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -17,25 +18,12 @@
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-		<div class="entry-meta">
-			<?php
-				georgia_workers_comp_posted_on();
-				georgia_workers_comp_posted_by();
-				?>
-		</div>
-		<?php endif; 
-
-		if ( 'articles' === get_post_type() ) :
-			?>
+		
+		?>
 
 		<small class="text-muted mb-4"><?php ga_authors('') ?></small>
 		<?php if( get_field('subhead') ): ?>
 		<h2><?php the_field('subhead'); ?></h2>
-		<?php endif; ?>
-
 		<?php endif; ?>
 
 	</header>
@@ -62,20 +50,18 @@
 		
 $authors = get_field('authors');
 if( $authors ): ?>
-		<div>
+
+		<div class="mt-3">
 			<hr />
 			<?php foreach( $authors as $author ): 
-
-        // Setup this post for WP functions (variable must be named $post).
-        setup_postdata($author); ?>
-
+			// Setup this post for WP functions (variable must be named $post).
+			setup_postdata($author); ?>
 			<?php the_content(); ?>
-
 			<?php endforeach; ?>
+
 		</div>
-		<?php 
-		// Reset the global post object so that the rest of the page works correctly.
-		wp_reset_postdata(); ?>
+
+		<?php wp_reset_postdata(); ?>
 
 		<?php endif; 
 
@@ -90,5 +76,6 @@ if( $authors ): ?>
 
 	<footer class="entry-footer">
 		<?php georgia_workers_comp_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+	</footer>
+
+</article>
