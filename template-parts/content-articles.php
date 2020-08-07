@@ -59,6 +59,26 @@
 			)
 		);
 
+		
+$authors = get_field('authors');
+if( $authors ): ?>
+		<div>
+			<hr />
+			<?php foreach( $authors as $author ): 
+
+        // Setup this post for WP functions (variable must be named $post).
+        setup_postdata($author); ?>
+
+			<?php the_content(); ?>
+
+			<?php endforeach; ?>
+		</div>
+		<?php 
+		// Reset the global post object so that the rest of the page works correctly.
+		wp_reset_postdata(); ?>
+
+		<?php endif; 
+
 		wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'georgia-workers-comp' ),
