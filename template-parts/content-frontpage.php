@@ -20,7 +20,7 @@
 
     <h2 class="pt-4">Recent Articles</h2>
 
-    <div class="page-content">
+    <div class="page-content pb-3">
 
         <?php  
         $query = new WP_Query(array(
@@ -38,8 +38,11 @@
         </div>
 
         <?php endwhile; endif; 
-    
-    wp_reset_postdata(); ?>
+
+        wp_reset_postdata(); ?>
+
+        <hr>
+        <a href="<?php echo get_post_type_archive_link( 'articles' ); ?>">See All Articles</a>
 
     </div>
 

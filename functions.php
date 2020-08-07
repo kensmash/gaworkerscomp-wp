@@ -247,7 +247,10 @@ function ga_authors($outputString){
 					$url = get_field( 'url', $author->ID );
 					echo esc_html( $leftText );
 					echo esc_html( $name );
-					echo '<br />';
+					if ( $organization ) {
+						echo '<br />';
+						echo esc_html( $organization );	
+  					}
 					echo esc_html( $organization );	
 					if ( $url ) {
 						echo '<br /><a href="'. $url .'" target="_blank" rel="noopener noreferrer">' . $url . '</a>';
