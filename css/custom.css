@@ -10020,7 +10020,7 @@ li:focus-within a {
 .article {
   background: white;
   color: black;
-  padding: 1.5em 1.05em;
+  padding: 1em;
   border-top: 8px solid #835e4a;
 }
 
@@ -10033,8 +10033,12 @@ li:focus-within a {
 }
 
 @media screen and (min-width: 640px) {
-  .article {
-    padding: 1.5em 2em;
+  .page-content {
+    padding: 0.5em 1.5em;
+  }
+
+  .sidebar-content {
+    padding: 1.5em 1em;
   }
 }
 /*-------------------------------------------------------
@@ -10103,8 +10107,7 @@ li:focus-within a {
 }
 
 @media screen and (min-width: 640px) {
-  .page-content,
-.article {
+  .article {
     padding: 1.5em 2em;
   }
 
