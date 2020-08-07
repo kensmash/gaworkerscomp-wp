@@ -251,7 +251,6 @@ function ga_authors($outputString){
 						echo '<br />';
 						echo esc_html( $organization );	
   					}
-					echo esc_html( $organization );	
 					if ( $url ) {
 						echo '<br /><a href="'. $url .'" target="_blank" rel="noopener noreferrer">' . $url . '</a>';
   					}
@@ -266,12 +265,14 @@ function ga_authors($outputString){
 					$organization = get_field( 'organization', $author->ID );
 					$url = get_field( 'url', $author->ID );
 					echo esc_html( $name );
-					echo '<br />';
-					echo esc_html( $organization );
-					if ( $url ) {
-						echo '<br /><a href="'. $url .'" target="_blank" rel="noopener noreferrer">' . $url . '</a>';
+					if ( $organization ) {
+						echo ' - ';
+						echo esc_html( $organization );	
   					}
-					if ($i != $authorNumber) echo' <br /> ';
+					if ( $url ) {
+						echo '- <a href="'. $url .'" target="_blank" rel="noopener noreferrer">' . $url . '</a>';
+  					}
+					if ($i != $authorNumber) echo', and ';
 			}
 		}			
 }
