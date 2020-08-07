@@ -198,6 +198,33 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/* 
+	remove archive from title on archive pages
+	solution from https://developer.wordpress.org/reference/functions/get_the_archive_title/
+	*/
+	
+	function my_theme_archive_title( $title ) {
+		if ( is_category() ) {
+			$title = single_cat_title( 'Category: ', false );
+		} elseif ( is_post_type_archive('authors') ) {
+			$title = "Authors";
+		} elseif ( is_post_type_archive('articles') ) {
+			$title = "Articles";
+		} elseif ( is_tag() ) {
+			$title = single_tag_title( 'Posts Tagged: ', false );
+		} elseif ( is_author() ) {
+			$title = 'Posts by <span class="vcard">' . get_the_author() . '</span>';
+		} elseif ( is_post_type_archive() ) {
+			$title = post_type_archive_title( '', false );
+		} elseif ( is_tax() ) {
+			$title = single_term_title( '', false );
+		}
+	  
+		return $title;
+	}
+	 
+	add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
+
 /*
  * get authors
  */
