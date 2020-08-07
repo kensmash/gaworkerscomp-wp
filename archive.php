@@ -11,7 +11,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main container">
-	<div class="col-md-8 col-lg-9 my-5 page-content">
+	<div class="col-md-8 col-lg-9 p-0 my-5">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -22,7 +22,9 @@ get_header();
 				?>
 		</header><!-- .page-header -->
 
-		<?php
+		<div class="page-content">
+
+			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -39,6 +41,7 @@ get_header();
 
 		endif;
 		?>
+		</div>
 	</div>
 
 </main><!-- #main -->
