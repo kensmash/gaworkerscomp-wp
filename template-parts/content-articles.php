@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class("p-3"); ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -25,9 +25,20 @@
 				georgia_workers_comp_posted_on();
 				georgia_workers_comp_posted_by();
 				?>
-		</div><!-- .entry-meta -->
+		</div>
+		<?php endif; 
+
+		if ( 'articles' === get_post_type() ) :
+			?>
+
+		<small class="text-muted mb-4"><?php ga_authors('') ?></small>
+		<?php if( get_field('subhead') ): ?>
+		<h2><?php the_field('subhead'); ?></h2>
 		<?php endif; ?>
-	</header><!-- .entry-header -->
+
+		<?php endif; ?>
+
+	</header>
 
 	<?php georgia_workers_comp_post_thumbnail(); ?>
 
