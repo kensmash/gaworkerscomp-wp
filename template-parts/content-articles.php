@@ -48,17 +48,17 @@
 		);
 
 		
-$authors = get_field('authors');
-if( $authors ): ?>
+	$authors = get_field('authors');
 
-		<div class="mt-3">
+	if( $authors ): ?>
+
+		<div class="mt-5">
 			<hr />
 			<?php foreach( $authors as $author ): 
 			// Setup this post for WP functions (variable must be named $post).
 			setup_postdata($author); ?>
 			<?php the_content(); ?>
 			<?php endforeach; ?>
-
 		</div>
 
 		<?php wp_reset_postdata(); ?>
@@ -72,6 +72,7 @@ if( $authors ): ?>
 			)
 		);
 		?>
+
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

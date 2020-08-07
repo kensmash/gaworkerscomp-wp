@@ -160,6 +160,8 @@ function georgia_workers_comp_scripts() {
 
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/dist/bootstrap.min.js', array('jquery'), '4.3.1', true );
 
+	wp_enqueue_script( 'anchor_scroll', get_template_directory_uri() . '/js/anchorscroll.js', array('jquery'), '20151215', true );
+
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/custom.css', array(), '4.4.1', 'all' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
