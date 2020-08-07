@@ -10133,6 +10133,10 @@ li:focus-within a {
     font-size: 0.75em;
   }
 }
+.entry-summary {
+  margin: 0;
+}
+
 /*-------------------------------------------------------
  *
  * TABLE STYLES

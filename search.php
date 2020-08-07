@@ -8,16 +8,17 @@
  */
 
 get_header();
+global $wp_query;
 ?>
 
 <main id="primary" class="site-main container">
 
-	<div class="col-md-8 col-lg-9 my-5 page-content">
+	<div class="col-md-8 col-lg-9 my-5 py-4 page-content">
 
 		<?php if ( have_posts() ) : ?>
 
 		<header class="page-header">
-			<h1 class="page-title">
+			<h1 class="page-title mb-4">
 				<?php
 					/* translators: %s: search query. */
 					printf( esc_html__( 'Search Results for: %s', 'georgia-workers-comp' ), '<span>' . get_search_query() . '</span>' );
@@ -36,6 +37,8 @@ get_header();
 				 * called content-search.php and that will be used instead.
 				 */
 				get_template_part( 'template-parts/content', 'search' );
+
+				if( $wp_query->current_post < $wp_query->post_count-1 ) echo '<hr class="my-4"/>';
 
 			endwhile;
 

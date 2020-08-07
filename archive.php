@@ -8,6 +8,7 @@
  */
 
 get_header();
+global $wp_query;
 ?>
 
 <main id="primary" class="site-main container">
@@ -30,6 +31,8 @@ get_header();
 				the_post();
 
 				get_template_part( 'template-parts/content-excerpt' );
+
+				if( $wp_query->current_post < $wp_query->post_count-1 ) echo '<hr class="my-4"/>';
 
 			endwhile;
 
