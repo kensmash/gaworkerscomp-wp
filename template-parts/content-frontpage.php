@@ -30,11 +30,14 @@
     ));
     ?>
 
-        <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); 
+        <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-    get_template_part( 'template-parts/content', 'excerpt' ); 
+        <div class="my-3">
+            <h3><a href="<?php the_permalink();?>" rel="bookmark"><?php the_title(); ?></a></h3>
+            <small class="text-muted mb-4"><?php ga_authors('') ?></small>
+        </div>
 
-    endwhile; endif; 
+        <?php endwhile; endif; 
     
     wp_reset_postdata(); ?>
 
